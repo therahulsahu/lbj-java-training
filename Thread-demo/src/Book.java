@@ -42,11 +42,11 @@ public class Book {
 		return price;
 	}
 	
-	public void setPrice(float price) throws IOException {
+	public void setPrice(float price) throws InvalidPriceException {
 		if(price <= 0) {
 			// IOException is a compile time exception
 			// It needs to be handled with try catch or deferred
-			throw new IOException("Price > 0");
+			throw new InvalidPriceException("Price > 0");
 			
 		}
 		this.price = price;
