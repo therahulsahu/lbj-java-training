@@ -1,7 +1,21 @@
 
 public class BankService {
 	
+	private static void validateAccountStatus(Account account) {
+		
+		if(account.getStatus() == STATUS.CLOSED) {
+			throw new IllegalArgumentException("This Account is closed.");
+		}
+		
+		if(account.getStatus() == STATUS.INACTIVE) {
+			throw new IllegalArgumentException("This Account is Inactive, Please Contact your branch for more details.");
+		}
+		
+	}
+	
 	private static void deposit(Account account, float depositAmount) {
+		
+		validateAccountStatus(account);
 		
 		if(depositAmount < 0) {
 			throw new IllegalArgumentException("Amount cannot be less than 0.");
@@ -13,6 +27,8 @@ public class BankService {
 	}
 	
 	private static void withdraw(Account account, float withdrawAmount) {
+		
+		validateAccountStatus(account);
 		
 		if(withdrawAmount < 0) {
 			throw new IllegalArgumentException("Amount cannot be less than 0.");
@@ -28,10 +44,12 @@ public class BankService {
 	public static void main(String[] args) {
 		
 		Account savingsAccount = new SavingsAccount("Rahul Sahu", "Bangalore", 1000, "04-04-2022", STATUS.ACTIVE);
+		Account dematAccount = new DematAccount("Nitesh Sharma", "Pune", 1500, "04-04-2022", STATUS.ACTIVE);
+		Account currentAccount = new CurrentAccount("Ujjwal Kashyap", "Bangalore", 2000, "04-04-2022", STATUS.ACTIVE);
 		
 		deposit(savingsAccount, 500);
 		
-		System.out.println(savingsAccount);
+		System.out.println(savingsAccount + "\n");
 		
 		withdraw(savingsAccount, 650);
 		
