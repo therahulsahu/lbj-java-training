@@ -1,6 +1,11 @@
 package com.rakuten;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,8 +30,14 @@ public class Account {
 	private String ownerName;
 	private String address;
 	private int balanceAmount;
-	private String createdDate;
+	private Date createdDate;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "status")
 	private STATUS status;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "type")
 	private TYPE type;
 
 	public TYPE getType() {
@@ -76,12 +87,13 @@ public class Account {
 	public void setStatus(STATUS status) {
 		this.status = status;
 	}
-
-	public String getCreatedDate() {
+	
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+	
 }
