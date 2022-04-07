@@ -21,11 +21,11 @@ public class UserController {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	void saveUser(@RequestBody User user) {
+	Integer saveUser(@RequestBody User user) {
 		System.out.println(user.getName());
 		System.out.println(user.getAge());
 
-		service.save(user);
+		return service.save(user);
 	}
 
 	@GetMapping

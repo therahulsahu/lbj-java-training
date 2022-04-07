@@ -12,10 +12,11 @@ public class UserService {
 	@Autowired
 	UserRepository repository;
 
-	void save(User user) {
+	Integer save(User user) {
 		
 		repository.save(user);
 		System.out.println("Save method called");
+		return user.getId();
 	}
 
 	List<User> getAllUsers() {
