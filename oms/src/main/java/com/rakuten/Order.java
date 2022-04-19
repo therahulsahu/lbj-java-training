@@ -14,7 +14,23 @@ public class Order {
 	Integer id;
 	private String item;
 	private int price;
+	private int discount;
+	private int discountedPrice;
 	
+	
+	
+	public int getDiscountedPrice() {
+		return discountedPrice;
+	}
+	public void setDiscountedPrice(int discountedPrice) {
+		this.discountedPrice = discountedPrice;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -23,7 +23,11 @@ public class OrderController {
 	void saveOrder(@RequestBody Order order) {
 		System.out.println(order.getItem());
 		System.out.println(order.getPrice());
-
+		if(order.getDiscount() > 0) {
+			order.setDiscountedPrice(order.getPrice()- (order.getPrice() * order.getDiscount() / 100));
+		} else {
+			order.setDiscountedPrice(order.getPrice());
+		}
 		service.saveOrder(order);
 	}
 
