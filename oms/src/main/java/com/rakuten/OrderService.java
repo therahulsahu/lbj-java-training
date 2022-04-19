@@ -1,24 +1,26 @@
 package com.rakuten;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OrderService {
 
-	List<Order> orders = new ArrayList<>();
+	@Autowired
+	OrderRepository repository;
 
 	void saveOrder(Order order) {
 
 		if (order.getPrice() <= 0) {
 			throw new IllegalArgumentException("Price cannot be less than or equal to 0, Price : " + order.getPrice());
 		}
-		orders.add(order);
+		repository.save(order);
+		System.out.println("Save method called");
 	}
 
 	public List<Order> getOrders() {
-		return orders;
+		return repository.findAll();
 	}
 }
