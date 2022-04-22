@@ -1,8 +1,8 @@
 This application will run on localhost:8081
 
 Terminals: 
-/appointment        - AppointmentController
-/contact            - ContactController
+- /appointment        - AppointmentController
+- /contact            - ContactController
 
 Connect to postgres: 
 1. See the application.properties file
