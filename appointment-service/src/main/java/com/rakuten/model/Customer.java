@@ -6,6 +6,7 @@ public class Customer {
 	private String mobileNumber;
 	private String emailId;
 	private Address address;
+	private Package selectedPackage;
 	
 	public Address getAddress() {
 		return address;
@@ -36,6 +37,12 @@ public class Customer {
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+	public Package getSelectedPackage() {
+		return selectedPackage;
+	}
+	public void setSelectedPackage(Package selectedPackage) {
+		this.selectedPackage = selectedPackage;
 	}
 	@Override
 	public String toString() {
