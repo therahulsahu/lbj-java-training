@@ -1,5 +1,5 @@
 JSON POST Requset syntax : 
-
+```
 {
     "customer" : {
         "name": "rahul",
@@ -16,3 +16,4 @@ JSON POST Requset syntax :
     "trainerPreference": "MALE",
     "needPysiohotherapist": true
 }
+```
