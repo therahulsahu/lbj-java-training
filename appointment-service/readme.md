@@ -1,4 +1,14 @@
-JSON POST Requset syntax : 
+This application will run on localhost:8081
+
+Terminals: 
+- /appointment        - AppointmentController
+- /contact            - ContactController
+
+Connect to postgres: 
+1. See the application.properties file
+2. Make a Database in Postgre Sql
+
+JSON POST Requset for /appointment syntax : 
 ```
 {
     "customer" : {
@@ -15,5 +25,14 @@ JSON POST Requset syntax :
     },
     "trainerPreference": "MALE",
     "needPysiohotherapist": true
+}
+```
+JSON POST request for /contact syntax : 
+```
+{
+    "name": "rahul",
+    "message": "hello word",
+    "email": "rahul@gmail.com",
+    "phoneNumber": 987654321
 }
 ```
