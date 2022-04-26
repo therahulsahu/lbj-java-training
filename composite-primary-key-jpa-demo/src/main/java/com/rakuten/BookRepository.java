@@ -2,6 +2,6 @@ package com.rakuten;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRepository extends JpaRepository<Employee, EmployeeIdentity> {
+public interface BookRepository extends JpaRepository<Book, BookIdentity> {
 
 }
