@@ -2,8 +2,36 @@ package com.rakuten;
 
 public class PensionerDetail {
 	
+	private boolean valid = true;
+	
+	public boolean isValid() {
+		return valid;
+	}
+	
+	public PensionerDetail(String name, String panNumber, String aadharNumber, int salaryEarned, int allowancesAmount, String pensionType,
+			String bankType) {
+		super();
+		this.name = name;
+		this.panNumber = panNumber;
+		this.aadharNumber = aadharNumber;
+		this.salaryEarned = salaryEarned;
+		this.allowancesAmount = allowancesAmount;
+		this.pensionType = pensionType;
+		this.bankType = bankType;
+	}
+
+	public PensionerDetail() {
+		super();
+	}
+
+	public PensionerDetail(boolean valid) {
+		super();
+		this.valid = valid;
+	}
+
 	private String name;
 	private String panNumber;
+	private String aadharNumber;
 	private int salaryEarned;
 	private int allowancesAmount;
 	private String pensionType;
@@ -44,6 +72,13 @@ public class PensionerDetail {
 	}
 	public void setBankType(String bankType) {
 		this.bankType = bankType;
+	}
+	public String getAadharNumber() {
+		return aadharNumber;
+	}
+
+	public void setAadharNumber(String aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 	
 	@Override
