@@ -45,7 +45,6 @@ public class PensionerDetail {
 	public void setBankType(String bankType) {
 		this.bankType = bankType;
 	}
-	
 	@Override
 	public String toString() {
 		return "PensionerDetail [name=" + name + ", salaryEarned=" + salaryEarned + "]";
