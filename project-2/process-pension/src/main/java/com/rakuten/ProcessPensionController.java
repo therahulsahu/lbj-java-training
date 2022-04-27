@@ -25,7 +25,7 @@ public class ProcessPensionController {
 		PensionerDetail detail = restTemplate.getForObject("http://PENSIONER-DETAIL/pensionerDetailByAadhar?aadharNumber=" + input.getAadharNumber(), PensionerDetail.class);
 		if(!detail.isValid()) {
 			System.out.println("Not valid");
-			return new PensionDetail(23, 32);
+			return new PensionDetail(-1, -1);
 		}
 		return service.calculatePension(detail);
 	}
