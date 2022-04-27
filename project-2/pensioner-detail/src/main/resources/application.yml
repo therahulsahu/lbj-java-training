@@ -3,7 +3,7 @@ server:
   
 spring:
   application:
-    name: PENSIONER_DETAIL
+    name: PENSIONER-DETAIL
 
 eureka:
   client:

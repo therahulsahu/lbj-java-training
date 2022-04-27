@@ -5,18 +5,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: order-service
-          uri: lb://ORDER-SERVICE
+        - id: process-pension
+          uri: lb://PROCESS-PENSION
           predicates:
-            - Path=/order/**
-        - id: payment-service
-          uri: lb://PAYMENT-SERVICE
+            - Path=/processPension/**
+        - id: pensioner-detail
+          uri: lb://PENSIONER-DETAIL
           predicates:
-            - Path=/payment/**
-        - id: print-service
-          uri: lb://PRINT-SERVICE
-          predicates:
-            - Path=/print/**
+            - Path=/pensionerDetailByAadhar/**
     
 eureka:
   client:
