@@ -1,5 +1,7 @@
 package com.rakuten;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -37,8 +39,7 @@ public class ManyToManyDemoApplication implements CommandLineRunner{
 		tag1.getPosts().add(post);
 		tag2.getPosts().add(post);
 		
-		postRepository.save(post);
-		
+		postRepository.save(post);	
 	}
 
 }
