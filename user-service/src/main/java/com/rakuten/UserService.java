@@ -39,5 +39,13 @@ public class UserService {
 		List<User> filteredUsers = getAllUsers().stream().filter((user) -> user.getAge() == age).collect(Collectors.toList());
 		return filteredUsers;
 	}
+	
+	public void deleteUserById(int id) {
+		repository.deleteById(id);
+	}
+	
+	public void deleteAllUsers() {
+		repository.deleteAll();
+	}
 
 }
