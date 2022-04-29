@@ -1,4 +1,4 @@
-JSON syntax for saving order
+# JSON syntax for saving order
 
 orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCELLED, REJECTED, RETURED, REPLACED )
 ```
@@ -12,3 +12,10 @@ orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCE
         "customerEmail": "cust@gmail.com"
 }
 ```
+
+# To search by order id:
+- localhost:8081/order/get?id={PUT_ID_HERE}
+
+# To search by customer id:
+- localhost:8081/order/customerId?id={PUT_ID_HERE}
+
