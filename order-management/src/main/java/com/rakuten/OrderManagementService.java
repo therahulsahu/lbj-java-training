@@ -38,6 +38,10 @@ public class OrderManagementService {
 	}
 	
 	public List<Order> searchByCustomerId(int id) {
-		return repository.findAll().stream().filter(order -> order.getCustomerId() == id).collect(Collectors.toList());
+		return repository.findByCustomerId(id);
+	}
+	
+	public Order getLatestOrder() {
+		return repository.findFirstByOrderByIdDesc();
 	}
 }

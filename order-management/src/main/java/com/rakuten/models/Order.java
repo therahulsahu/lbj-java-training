@@ -17,7 +17,7 @@ enum ORDERSTATUS {
 public class Order {
 	
 	@Id
-	int orderId;
+	int id;
 	int customerId;
 	int orderAmount;
 	Date orderDate = new Date();
@@ -27,11 +27,11 @@ public class Order {
 	
 	
 	
-	public int getOrderId() {
-		return orderId;
+	public int getId() {
+		return id;
 	}
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
+	public void setId(int orderId) {
+		this.id = orderId;
 	}
 	public int getCustomerId() {
 		return customerId;

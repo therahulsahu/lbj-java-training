@@ -39,4 +39,9 @@ public class OrderManagementController {
 	List<Order> getByCustomerId(@RequestParam int id) {
 		return service.searchByCustomerId(id);
 	}
+	
+	@GetMapping("/recent")
+	Order getReceOrder() {
+		return service.getLatestOrder();
+	}
 }
