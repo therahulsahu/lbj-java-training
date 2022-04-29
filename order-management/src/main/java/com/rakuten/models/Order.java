@@ -15,6 +15,7 @@ enum ORDERSTATUS {
 @Entity
 @Table(name = "orders")
 public class Order {
+	
 	@Id
 	int orderId;
 	int customerId;
