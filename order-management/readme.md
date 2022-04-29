@@ -13,6 +13,9 @@ orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCE
 }
 ```
 
+# To see latest order:
+- localhost:8081/order/recent
+
 # To search by order id:
 - localhost:8081/order/get?id={PUT_ID_HERE}
 
