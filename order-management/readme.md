@@ -3,7 +3,7 @@
 orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCELLED, REJECTED, RETURED, REPLACED )
 ```
 {
-        "orderId": 1,
+        "id": 1,
         "customerId": 101,
         "orderAmount": 500,
         "orderStatus": "PLACED",
