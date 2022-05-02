@@ -3,7 +3,7 @@
 orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCELLED, REJECTED, RETURED, REPLACED )
 ```
 {
-        "orderId": 1,
+        "id": 1,
         "customerId": 101,
         "orderAmount": 500,
         "orderStatus": "PLACED",
@@ -12,6 +12,9 @@ orderStatus is of type Enum, accepted values : ( PLACED , SHIPPED ,CLOSED, CANCE
         "customerEmail": "cust@gmail.com"
 }
 ```
+
+# To see latest order:
+- localhost:8081/order/recent
 
 # To search by order id:
 - localhost:8081/order/get?id={PUT_ID_HERE}
