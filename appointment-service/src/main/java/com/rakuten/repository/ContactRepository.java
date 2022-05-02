@@ -1,4 +1,4 @@
-package com.rakuten;
+package com.rakuten.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.rakuten;
+package com.rakuten.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,12 @@ import com.rakuten.model.Appointment;
 public class AppointmentService {
 	List<Appointment> repository = new ArrayList<>();
 	
-	void saveAppointment(Appointment appointment) {
+	public void saveAppointment(Appointment appointment) {
 		repository.add(appointment);
 		System.out.println("appointment saved");
 	}
 	
-	List<Appointment> getAllAppointments() {
+	public List<Appointment> getAllAppointments() {
 		return repository;
 	}
 }
