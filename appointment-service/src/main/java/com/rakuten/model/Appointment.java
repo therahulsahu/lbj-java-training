@@ -8,6 +8,7 @@ public class Appointment {
 	private Customer customer;
 	private TRAINERPREFERENCE trainerPreference;
 	private boolean needPysiohotherapist;
+	
 	public Customer getCustomer() {
 		return customer;
 	}

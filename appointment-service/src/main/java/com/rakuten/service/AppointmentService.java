@@ -2,6 +2,7 @@ package com.rakuten.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,9 @@ public class AppointmentService {
 	
 	public List<Appointment> getAllAppointments() {
 		return repository;
+	}
+	
+	public List<Appointment> getAppointmentByCustomerEmail(String email) {
+		return repository.stream().filter(appointment -> appointment.getCustomer().getEmailId().equals(email)).collect(Collectors.toList());
 	}
 }
