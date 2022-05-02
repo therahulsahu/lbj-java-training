@@ -21,12 +21,18 @@ JSON POST Requset for /appointment syntax :
             "city": "",
             "country" : "",
             "pincode": ""
+        },
+        "selectedPackage": {
+            "name": "ONETIME",
+            "amount": 500 
         }
     },
     "trainerPreference": "MALE",
     "needPysiohotherapist": true
 }
 ```
+Inside selectedPackage, name is Enum and only accepts :(ONETIME, FOURSESSIONS, FIVESESSIONS)
+
 JSON POST request for /contact syntax : 
 ```
 {
