@@ -23,4 +23,6 @@ public class ContactController {
 	void sendMessage(@RequestBody ContactMessage message) {
 		contactService.send(message);
 	}
+	
+	
 }

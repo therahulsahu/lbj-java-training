@@ -1,27 +1,49 @@
 package com.rakuten.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rakuten.model.Appointment;
+import com.rakuten.repository.AppointmentRepository;
+import com.rakuten.repository.CustomerRepository;
 
 @Service
 public class AppointmentService {
-	List<Appointment> repository = new ArrayList<>();
+	
+	@Autowired
+	AppointmentRepository appointmentRepository;
+	
+	@Autowired
+	CustomerRepository customerRepository;
 	
 	public void saveAppointment(Appointment appointment) {
-		repository.add(appointment);
+		if(!customerRepository.existsById(appointment.getCustomer().getId())) {
+			customerRepository.save(appointment.getCustomer());
+		}
+		appointmentRepository.save(appointment);
 		System.out.println("appointment saved");
 	}
 	
 	public List<Appointment> getAllAppointments() {
-		return repository;
+		return appointmentRepository.findAll();
 	}
 	
 	public List<Appointment> getAppointmentByCustomerEmail(String email) {
-		return repository.stream().filter(appointment -> appointment.getCustomer().getEmailId().equals(email)).collect(Collectors.toList());
+		return appointmentRepository.findByCustomerEmailId(email);
+		
+	}
+	
+	public void updateAppointment(Appointment appointment) {
+		if(!appointmentRepository.existsById(appointment.getId())) {
+			throw new IllegalArgumentException();
+		}
+		appointmentRepository.save(appointment);
+		System.out.println("updated");
+	}
+	
+	public void deleteAppointment(int id) {
+		appointmentRepository.deleteById(id);
 	}
 }
