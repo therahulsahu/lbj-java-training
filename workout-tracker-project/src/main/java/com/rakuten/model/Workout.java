@@ -1,9 +1,15 @@
 package com.rakuten.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+enum CATEGORY {
+	RUNNING, YOGA, CYCLING, LIFTING
+}
 
 @Entity
 public class Workout {
@@ -14,6 +20,9 @@ public class Workout {
 	private String title;
 	private String note;
 	private float caloriesBurntPerMinute;
+	
+	@Enumerated(EnumType.STRING)
+	private CATEGORY category;
 	
 	public Integer getId() {
 		return id;
@@ -38,6 +47,12 @@ public class Workout {
 	}
 	public void setCaloriesBurntPerMinute(float caloriesBurntPerMinute) {
 		this.caloriesBurntPerMinute = caloriesBurntPerMinute;
+	}
+	public CATEGORY getCategory() {
+		return category;
+	}
+	public void setCategory(CATEGORY category) {
+		this.category = category;
 	}
 	
 }

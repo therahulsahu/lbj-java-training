@@ -31,4 +31,16 @@ public class WorkoutService {
 		return optional.get();
 	}
 	
+	public void deleteWorkoutById(int id) {
+		repository.deleteById(id);
+	}
+	
+	public void updateWorkoutById(Workout workout) {
+		if(!repository.existsById(workout.getId())) {
+			throw new IllegalArgumentException();
+		}
+		repository.save(workout);
+		System.out.println("updated");
+	}
+	
 }
